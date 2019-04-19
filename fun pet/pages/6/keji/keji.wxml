@@ -1,0 +1,48 @@
+<!--logs.wxml-->
+<view class="container">
+	<view class="container-body space-content">
+	  <view class="space-top">
+      <view class="show pic">
+        <image class='img' src="../../../images/t.jpg"></image>
+      </view>
+  	  <view class="space-info">
+  	  	<view class="space-title">{{spacedata.PetName}}</view>
+  	  	<view class="space-tags">
+  	  		<text wx:for="{{spacedata.TagIDs}}" wx:key="*this">{{item}}</text>
+  	  	</view>
+  	  	<view class="space-list">
+  	  		<view class="space-item">
+  	  			<text class="text-left">简介：</text>
+  	  			<text class="text-right">
+  	  				<text class="text-orange">{{spacedata.introduction}}</text>
+  	  			</text>
+  	  		</view>
+  	  	</view>
+  	  </view>
+	  </view>
+	  <view class="space-block">
+	  	<view class="space-block-title">形态特征</view>
+	  	<view class="space-block-content">
+	  		<view class="space-passage">{{spacedata.Morphological_characteristics}}</view>
+	  	</view>
+  	</view>
+	  <view class="space-block">
+	  	<view class="space-block-title">性格特征</view>
+	  	<view class="space-block-content">
+	  		<view class="space-passage">{{spacedata.Personality_characteristics}}</view>
+	  	</view>
+  	</view>
+	  <view class="space-block">
+	  	<view class="space-block-title">饲养方法</view>
+	  	<view class="space-block-content">
+	  		<view class="space-passage">{{spacedata.Breeding_method}}</view>
+	  	</view>
+  	</view>
+	    <view class="space-block">
+	  	  <view class="space-block-title">梳理犬毛</view>
+	  	  <view class="space-block-content">
+	  		  <view class="space-passage">{{spacedata.comb}}</view>
+	  	  </view>
+  	  </view>
+  </view>
+</view>

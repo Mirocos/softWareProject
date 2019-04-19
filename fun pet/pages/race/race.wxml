@@ -1,0 +1,16 @@
+<!--pages/race/race.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" mode="aspectFit" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-tips">{{userInfo.tips}}</text>
+  </view>
+  <form bindsubmit="formSubmit" id='2' bindreset="formReset">  
+    <input style='display:none' name='program_id' value='{{program_id}}'></input>   
+        <view class="usermotto">
+        <button class="button" type="primary" bindtap="upimg">{{motto}}</button>
+        </view>
+  
+      <button class='btn' formType="submit">提交</button>  
+  </form> 
+
+</view>

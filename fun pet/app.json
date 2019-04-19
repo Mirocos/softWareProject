@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/bbs/bbs",
+    "pages/cat/cat",
+    "pages/dog/dog",
+    "pages/race/race",
+    "pages/face/face",
+    "pages/user/user",
+    "pages/baike/baike",
+    "pages/1/1",
+    "pages/2/2",
+    "pages/3/3",
+    "pages/4/4",
+    "pages/5/5",
+    "pages/6/6",
+    "pages/6/keji/keji"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00e5ff",
+    "navigationBarTitleText": "fun pet",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1BA0E1",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/bbs/bbs",
+        "text": "讨论区"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+}
