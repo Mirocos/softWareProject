@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('wx/', include('wx.urls')),
     path('upImage/', views.register),
-    path('b64Image/', views.changoToBase64)
+    path('b64Image/', views.changoToBase64),
+
 ]
