@@ -5,6 +5,9 @@ import os
 import base64
 from qiniu import Auth, put_file, etag
 from . import models
+from django.forms.models import model_to_dict
+import json
+from django.core import serializers
 import qiniu.config
 from  softproject import settings
 # Create your views here.
@@ -104,5 +107,47 @@ def savePetWiki(request):
         pw.save()
 
         return HttpResponse(pw.id) #f返回该宠物种类的id值（独一无二）
+
+
+def queryPetById(id):
+    obj = models.Pet.objects.filter(id=id)
+    # obj = json.dumps(obj)
+    # print(type(obj))
+    # label = ["maxOld", "height", "weight", "price"]
+    # TagIDs = []
+    # for i in label:
+    #     TagIDs.append(obj[i])
+    #     obj.pop(i)
+    #
+    # obj["TagIDs"] = TagIDs
+    # return json.dumps(obj)
+    obj = serializers.serialize("json", obj)
+    data = json.loads(obj)
+    print(type(data[0]))
+    label = ["maxOld", "height", "weight", "price"]
+    TagIDs = []
+    for i in label:
+        TagIDs.append(data[0]['fields'][i])
+        data[0]['fields'].pop(i)
+    # for key in data[0]['fields']:
+    #     print(data[0]['fields'][key])
+    #     data[0]['fields'][key] = data[0]['fields'][key].replace('\\\\', '\\')
+    data[0]['fields']['TagIDs'] = TagIDs
+    return data
+
+
+
+
+
+def getPetWiki(request):
+    if request.method == "POST":
+        # try:
+        id = request.POST.get("id")
+        print(id)
+        return HttpResponse(queryPetById(id))
+        # except Exception as e:
+        #     return HttpResponse("Record not found")
+    else:
+        return HttpResponse("Method expected to be POST but found with GET")
 
 

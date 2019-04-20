@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    # path('petWiki/', views.test),
-    path('uploadWiki', views.savePetWiki)
+    path('uploadWiki/', views.savePetWiki),  #use /wx/uploadWiki/
+    path('getWiki/', views.getPetWiki)
 ]
